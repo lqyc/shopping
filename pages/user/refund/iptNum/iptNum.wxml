@@ -1,0 +1,10 @@
+<!--pages/user/refund/iptNum/iptNum.wxml-->
+<view class="iptNum bgColor">
+    <view class="iptBox">
+        <input class="iptBody" type="number" placeholder="请输入快递单号" placeholder-class="iptBodyplaceholder" bindinput='iptNums' />
+        <view class="scanCodeBtn"><span class="iptIcon iconBackground" catchtap='scanCodeBtn'></span></view>
+    </view>
+    <view class="iptbox">
+        <button disabled='{{iptState}}' class="iptBtnBody" catchtap='goBackRefund'>确定</button>
+    </view>
+</view>

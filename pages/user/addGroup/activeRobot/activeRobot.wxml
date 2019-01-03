@@ -1,0 +1,21 @@
+
+<view class="headTitle colorWhite clearfix">
+    <view class="right" bindtap="showTipMask">未收到好友请求<span class="iconBackground why" ></span>
+    </view>
+</view>
+<view class="importStep colorWhite">
+    <view>{{robotName}}已发送好友请求，通过验证后,请发送微信信息<b>{{verificationCode}}</b>给小栗。
+    </view>
+    <view class="copyBtn textCenter" bindtap="clipboardData">复制信息</view>
+</view>
+<view class="stepImg textCenter">
+	<image src="https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1b83bff49e3e00175bf847"/>
+	<view class="iconBackground stepRight " bindtap="gonestStep"></view>
+</view>
+<view class="loginMask" hidden="{{showTip}}">
+    <view class="tipMask textCenter" catchlongpress="saveImg">
+        <span class="iconBackground close" bindtap="hideTipMask"></span>
+        <image class="code" src="{{qrcode}}" data-url='{{qrcode}}' />
+        <view class="colorGray">小栗正在飞快向您跑来！您也可以通过二维码主动添加小栗为好友</view>
+    </view>
+ </view> 

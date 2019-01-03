@@ -1,0 +1,45 @@
+<!--pages/find/sucessPay/sucessPay.wxml-->
+<wxs src='../../../filter.wxs' module='Filter'></wxs>
+
+<scroll-view class='sucessPay' scroll-y='{{!showLogin}}' scroll-top='{{skipLong}}' scroll-with-animation='{{true}}'>
+    <view class="loginMask" wx:if="{{showMask}}" catchtap="gotoregister">
+        <view class="bannerImg">
+            <image src='https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1b8a7cf49e3e002452a86a' mode='aspectFit' />
+        </view>
+        <view class="iconBackground maskClose" catchtap="hideMaskBox"></view>
+    </view>
+    <view class='sucessPayHeader border-bottom bgColor border-top'>
+        <view class="sucessPayHeaderImg">
+            <span class="iconBackground successIocn"></span>
+            <text class='sucessPayHeaderTitle'>付款成功</text>
+        </view>
+        <view class='sucessPayHeaderContent'>
+            <view class='sucessPayHeaderContentText'>
+                <text class='sucessPayHeaderContentTextName'>订单编号：<text class="sucessPayHeaderContentTextName1">{{goodsObj.orderNo}}</text></text>
+                <text class='sucessPayHeaderContentTextName'>商品名称：<text class="sucessPayHeaderContentTextName1">{{goodsObj.name}}</text></text>
+                <text class='sucessPayHeaderContentTextName'>付款金额：<text class="sucessPayHeaderContentTextName1">¥{{Filter.Float2(goodsObj.paymoney/100)}}</text></text>
+            </view>
+        </view>
+    </view>
+    <navigator url='/pages/user/myOrder/myOrder' class='lookOrder border-top colorRed'>
+        <image src='/icons/wave.png' class="toMyOrdes" />
+    </navigator>
+
+    <view class='goBackHome' bindtap='gotoIndex'>
+        <button>继续去逛逛</button>
+    </view>
+    <view class='recommendProduction bgColor'>
+        <text class='youLike'>猜你喜欢</text>
+        <navigator url='/pages/find/detail/detail?id={{item.id}}&imgs={{item.coverPhoto}}' class='recommendProductionItem' wx:for='{{products}}' wx:key='{{index}}'>
+            <image src='{{item.coverPhoto}}' class="recommendImg" />
+            <view class="clearfix">
+                <view class="recommendName">{{item.name}}</view>
+                <view class='colorRed recommendMoney'>¥<text class="recommendMoneyNum">{{Filter.Float2(item.price)}}</text></view>
+            </view>
+        </navigator>
+    </view>
+    <view class="updataBox" bindtap='skipLongBtn'>
+        <text>换一批看看</text>
+        <view class="updateIcon iconBackground"></view>
+    </view>
+</scroll-view>

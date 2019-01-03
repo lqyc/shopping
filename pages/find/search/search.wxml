@@ -1,0 +1,39 @@
+<!--pages/find/search/search.wxml-->
+<view class="search-box">
+    <view class="icons iconBackground"></view>
+    <view style="position: relative;">
+        <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" bindconfirm="wxSearchFn" class="search-input" placeholder="请输入商品名称" maxlength="19" confirm-type="search" focus />
+        <view class='closeSearch iconBackground' wx:if="{{wxSearchData.mindKeys.length>0}}" bindtap='closeSearch'></view>
+    </view>
+    <span bindtap="wxSearchFn" class="searchingBtn">搜索</span>
+</view>
+<view class="wxSearch" bindtap="wxSearchTap">
+    <view class="wxSearchInner">
+        <view class="wxSearchMindKey searchListWran" wx:if="{{wxSearchData.mindKeys.length>0}}">
+            <view class="wxSearchMindKeyList ">
+                <block wx:for="{{wxSearchData.mindKeys}}" wx:key="unique">
+                    <view class="wxSearchMindKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}" hover-class="hoverItem"  >{{item}}</view>
+                </block>
+            </view>
+        </view>
+        <view wx:if="{{notFound}}" class="wxSearchMindKey searchListWran">
+            <view class="wxSearchMindKeyList">
+                 <view class="wxSearchMindKeyItem" bindtap="wxSearchFn">搜索：{{inputValues}}</view>
+            </view>
+        </view>
+        <view class="wxSearchHistory" style="display:{{wxSearchData.view.isShowSearchHistory ? 'block':'none'}}">
+            <view class="wxSearchTitle clearfix">历史搜索：
+                <view class="wxSearchDeleteAllBtn iconBackground" bindtap="wxSearchDeleteAll"></view>
+            </view>
+            <view wx:if="{{wxSearchData.his[0]}}" class="wxSearchHistoryList">
+                <block wx:for="{{wxSearchData.his}}" wx:key="unique">
+                    <view class="wxSearchHistoryItem" bindtap="wxSearchKeyTap" data-key="{{item}}" hover-class="hoverItem">{{item}}
+                    </view>
+                </block>
+            </view>
+            <view wx:else>
+                <view class="wxSearchHistoryEmpty">无历史数据</view>
+            </view>
+        </view>
+    </view>
+</view>

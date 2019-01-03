@@ -1,0 +1,191 @@
+/* pages/find/find.wxss */
+
+.findBox {
+    position: relative;
+    height: 100%;
+}
+
+.findItemBox {
+    padding: 210rpx 30rpx 10rpx;
+    /* margin-top: 210rpx; */
+    box-sizing: border-box;
+}
+
+.findItem {
+    display: flex;
+    font-size: 28rpx;
+    padding: 40rpx 0;
+}
+
+.goodsPic {
+    width: 180rpx;
+    height: 180rpx;
+    display: inline-block;
+    margin-right: 20rpx;
+    background-position: -380rpx -984rpx;
+}
+
+.findImg {
+    width: 180rpx;
+    height: 180rpx;
+}
+
+.findContent {
+    flex: 1;
+    height: 180rpx;
+    position: relative;
+    padding-left: 10rpx;
+}
+
+.findTitle {
+    display: block;
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    color: #444;
+    width: 100%;
+    height: 95rpx;
+    overflow: hidden;
+    line-height: 45rpx;
+}
+
+.findTitle .volumeTitle {
+    color: #B5ADAD;
+}
+
+.findText {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-family: PingFangSC-Regular;
+}
+
+.findPrice {
+    margin-right: 10rpx;
+    color: #aaa;
+    font-size: 30rpx;
+    width: 350rpx;
+}
+
+.findPrice .findPriceText1 {
+    font-size: 40rpx;
+    margin-bottom: 2rpx;
+    line-height: 40rpx;
+}
+
+.findContent .findBtn {
+    margin-right: 10px;
+    font-family: PingFangSC-Regular;
+    width: 160rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 30rpx;
+    color: #fff;
+    text-align: center;
+    background: #f45c43;
+    border-radius: 8rpx;
+}
+
+.searchBtnBox {
+    background: #fff;
+    margin-top: 22rpx;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 2px 8px 0 #EEE9E9;
+}
+
+.searchBtnBox .classify {
+    width: 40rpx;
+    height: 40rpx;
+    display: inline-block;
+    background-position: -54rpx -738rpx;
+    vertical-align: middle;
+    margin-left: 5rpx;
+}
+
+.searchBtnBox .onLine .classify {
+    background-position: -54rpx -778rpx;
+}
+
+.changeStateClass {
+    position: relative
+}
+
+.searchBtnBox .title {
+    height: 82rpx;
+    line-height: 82rpx;
+    flex: 1;
+    text-align: center;
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    color: #9a9a9a;
+}
+
+.searchBtnBox .onLine {
+    font-family: PingFangSC-Medium;
+    color: #F45C43;
+}
+
+.searchBtnBox .titieWrap {
+    display: flex;
+    box-shadow: 0rpx 8rpx 13rpx rgba(68, 68, 68, 0.02);
+    position: relative;
+    z-index: 23;
+}
+
+.textBox {
+    height: 1300rpx;
+    overflow-y: auto;
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 82rpx;
+    z-index: 10;
+    line-height: 100rpx;
+    padding-bottom: 450rpx;
+}
+
+.textBox button {
+    font-size: 28rpx;
+    width: 100%;
+    text-align: left;
+    text-indent: 40rpx;
+    background: none;
+    border-radius: 0!important;
+    color: #666;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 1px solid #E0DEDE;
+    border-right: 1px solid #E0DEDE;
+    float: left;
+}
+
+.textBox button::after {
+    border: none;
+}
+
+.textBox button:hover,
+.textBox button[disabled] {
+    background: #FEF3F2;
+    color: #F45C43;
+}
+
+.displauFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.noSuchGoods {
+    width: 100%;
+    height: 300rpx;
+    padding-top: 150px;
+}
+
+.noSuchGoods image {
+    width: 150rpx;
+    height: 150rpx;
+    margin: 0 auto 10rpx;
+}

@@ -1,0 +1,76 @@
+<!--pages/user/user.wxml-->
+<view class="user-main ">
+    <view class='user-message'>
+        <view class="userinfo">
+            <view wx:if="{{!hasUserInfo && canIUse}}">
+                <image class="userinfo-avatar" src="/icons/liziLogo.png" background-size="cover"></image>
+            </view>
+            <block wx:else>
+                <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+            </block>
+        </view>
+        <view class="nickNameBox">
+            <text wx:if="{{!hasUserInfo && canIUse}}">用户昵称</text>
+            <text wx:else>{{userInfo.nickName}}</text>
+            <view>
+                <view wx:if="{{!showLogin}}" class="already">已绑定有栗账号:{{yoliAccount}}</view>
+                <button wx:else class="loginBtn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+                    绑定有栗账号<span class="iconBackground loginIcons"></span>
+                </button>
+            </view>
+        </view>
+    </view>
+    <view class="earnings clearfix" wx:if="{{!showLogin}}">
+        <view class="list">
+            <view class="colorRed"><text>¥</text>243.43</view>
+            <view class=" colorGray">成交额</view>
+        </view>
+        <view class="list">
+            <view class="colorRed">93</view>
+            <view class="colorGray">订单数</view>
+        </view>
+        <view class="list">
+            <view class="colorRed"><text>¥</text>54.24</view>
+            <view class="colorGray">收益额</view>
+        </view>
+    </view>
+    <view class='userBtnMain'>
+        <view bindtap='gotoOrder' class="gotoOrder clearfix">
+            <view class="allOrders">
+                <span class="orderIcon iconBackground icons"></span> 查看全部订单 <span class="rightArrow iconBackground icons"></span>
+            </view>
+            <view class="orderList clearfix">
+                <view class="labelBox">
+                    <view>最新物流</view>
+                    <view>10-20</view>
+                </view>
+                <image class="gotoOrderAvatar" src="{{imgUrl}}" background-size="cover"></image>
+                <view class="check">
+                    <view class="colorRed">派送中</view>
+                    <view class="deliver">上海浦东三林公司的派件员刘广正在派件点击...1872938475839</view>
+                </view>
+            </view>
+        </view>
+        <button class="buttonWrap clearfix" style="border-top:1rpx solid #E0DEDE" wx:if="{{!showLogin}}" bindtap="addGroup">
+            <span class="group iconBackground icons "></span>
+           <text class="{{groupNew?'hasNew':''}}">群管理</text><span class="rightArrow iconBackground icons"></span>
+       </button>
+        <button class="buttonWrap clearfix" wx:if="{{!showLogin}}" bindtap="inviteRegister">
+            <span class="friends iconBackground icons"></span>
+             邀请好友<span class="rightArrow iconBackground icons"></span>
+         </button>
+        <button class="buttonWrap clearfix" bindtap="editAddress">
+            <span class="address iconBackground icons"></span>
+              收货地址<span class="rightArrow iconBackground icons"></span>
+        </button>
+        <button class="buttonWrap clearfix" bindtap="goTorefund">
+            <span class="saled iconBackground icons"></span>
+             退货与售后<span class="rightArrow iconBackground icons"></span>
+        </button>
+        <button class="buttonWrap clearfix" open-type="contact">
+            <span class="contact iconBackground icons"></span>
+             联系客服<span class="rightArrow iconBackground icons"></span>
+        </button>
+    </view>
+    <!-- <web-view src="https://admin.gemii.cc/login">跳转login</web-view> -->
+</view>

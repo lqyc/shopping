@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<import src="/pages/template/loginBox.wxml" />
+<block wx:if="{{showLogin}}">
+    <view class="container">
+        <view class="userinfo">
+            <view wx:if="{{!hasUserInfo && canIUse}}">
+                <image class="userinfo-avatar" src="/icons/liziLogo.png" background-size="cover"></image>
+            </view>
+            <block wx:else>
+                <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+            </block>
+        </view>
+        <view class="loginBtnWrap" wx:if="{{loginBtnWrap}}">
+            <view class="{{showlogining?'title onShow':'title'}}" bindtap="goToLogin">登录</view>
+            <view class="{{!showlogining?'loginRegist onShow':'loginRegist'}}" bindtap='goToRegist'>注册</view>
+        </view>
+        <view class="loginBtnWrap" wx:else>
+            <view class=" onShow updatePsd">修改密码</view>
+        </view>
+        <block style="width:100%;">
+            <template is="{{showlogining ? 'login' : 'regist'}}" data="{{ errorPasswordL,errorPasswordR, errorUserL,errorUserR,loginOn,userNameFocus,userPsdFocus,userPsdFocusRe,userCodeFocus,phoneError,codeError,codeText,CodeState,BtnState,phoneState,codeNum,phoneIptFocus,codeFocus,nullData,registerOn,loginBtnWrap}}"
+            />
+        </block>
+    </view>
+</block>

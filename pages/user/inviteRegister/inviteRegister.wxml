@@ -1,0 +1,15 @@
+<!--pages/user/inviteRegister/inviteRegister.wxml-->
+<view class="inviteRegister">
+    <view class="invitePic">
+        <view class="username">{{userName}}</view>
+    </view>
+</view>
+<view class="sendheadTitle sendFriend">
+    <view class="cutLine"></view>
+    <text>发送到</text>
+    <view class="cutLine"></view>
+</view>
+<button class="textCenter" open-type="share" bindtap="shareFriend">
+	<view class="iconBackground share"></view>
+	微信
+</button>

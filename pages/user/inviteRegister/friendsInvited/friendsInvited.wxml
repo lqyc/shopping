@@ -1,0 +1,5 @@
+  <!--pages/user/inviteRegister/friendsInvited/friendsInvited.wxml-->
+
+    <navigator url="/pages/login/login?route={{'register'}}" class="invitePic" >
+        <view class="username">{{userName}}</view>
+</navigator>

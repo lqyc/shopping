@@ -1,0 +1,369 @@
+/**app.wxss**/
+
+page {
+    background: #f7f7f7;
+    height: 100%;
+    font-family: "PingFangSC-Regular";
+}
+
+.clearfix:after {
+    clear: both;
+    content: '.';
+    display: block;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.iconBackground {
+    background: url(https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1b8387f49e3e002452a855);
+    background-size: 1200rpx 1400rpx;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /*padding: 200rpx 0;*/
+    box-sizing: border-box;
+}
+
+.loginMask {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+
+/*搜索框*/
+
+.search-input {
+    line-height: 70rpx;
+    position: relative;
+    height: 70rpx;
+    margin: 0 30rpx;
+    padding: 2px 0 0 40rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    text-align: center;
+    color: #ccc;
+    background: #fff;
+    border-radius: 100px;
+}
+
+.search-box {
+    height: 100rpx;
+    padding-top: 30rpx;
+    width: 100%;
+    background: linear-gradient(-180deg, #f45c43 0%, #eb3349 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+}
+
+.search-box .icons {
+    position: absolute;
+    z-index: 444;
+    top: 17rpx;
+    left: 30%;
+    width: 44rpx;
+    height: 44rpx;
+    background-position: -54rpx -126rpx;
+}
+
+.border-top {
+    border-top: 1px solid #eee;
+}
+
+.border-bottom {
+    border-bottom: 1rpx solid #eee;
+}
+
+.border-left {
+    border-left: 1px solid #eee;
+}
+
+.border-right {
+    border-right: 1px solid #eee;
+}
+
+.bgColor {
+    background: #fff;
+}
+
+.marginBottom100 {
+    margin-bottom: 120rpx;
+}
+
+.bgColorRed {
+    background: linear-gradient(163deg, #ff835c, #eb3449);
+    color: #fff !important;
+}
+
+.bgRed {
+    background: #F45C43!important;
+}
+
+.textCenter {
+    text-align: center
+}
+
+.colorGray {
+    color: #444;
+}
+
+.colorGrayness {
+    color: #B5B5B5;
+}
+
+.colorWhite {
+    color: #fff;
+}
+.bgGray{
+    background:#b5bdc6;
+}
+.colorRed {
+    color: #f45c43 !important;
+}
+
+.paddingTop {
+    padding-top: 24rpx;
+}
+
+.displayFlex {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /* border-top: 1px solid #ddd; */
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.displayFlex text {
+    color: #999;
+}
+
+.sendheadTitle {
+    font-size: 30rpx;
+    height: 100rpx;
+    line-height: 120rpx;
+}
+
+.sendheadTitle text {
+    margin: 0 30rpx;
+}
+
+.sendheadTitle .cutLine {
+    width: 270rpx;
+    height: 2rpx;
+    background: #b5bdc6;
+    line-height: 30rpx;
+    display: inline-block;
+    vertical-align: super;
+}
+
+
+/*动画*/
+
+.loading {
+    background-color: #fff;
+    border-radius: 100%;
+    margin: 0 0 20rpx 0;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    border: 2px solid #f45c43;
+    border-bottom-color: transparent;
+    height: 40rpx;
+    width: 40rpx;
+    background: transparent !important;
+    display: inline-block;
+    -webkit-animation: rotate 0.75s 0s linear infinite;
+    animation: rotate 0.75s 0s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.commodity_screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+    z-index: 1000;
+    color: #fff;
+}
+
+.commodity_attr_box {
+    width: 100%;
+    /* overflow: hidden; */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+    background: #fff;
+    padding-top: 20rpx;
+}
+
+.detailBottomBtn button {
+    border-radius: 0;
+}
+
+.wxParse image {
+    width: 100% !important;
+}
+
+.TimelineBOX {
+    font-size: 28rpx;
+}
+
+.TimelineMessages {
+    padding: 0 40rpx;
+}
+
+.TimelineMessages text {
+    display: block;
+    padding: 30rpx 0;
+    width: 100%;
+    margin-bottom: 30rpx;
+}
+
+.TimelineMessage {
+    padding: 30rpx 40rpx;
+    color: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Timeline {
+    padding: 0 40rpx 0rpx 142rpx;
+    color: #9b9191;
+    box-sizing: border-box;
+}
+
+.Timeline-content {
+    border-left: 2px solid #eee;
+    padding-left: 25rpx;
+}
+
+.Timeline-content .boxItem {
+    position: relative;
+    margin-bottom: 80rpx;
+}
+
+.Timeline-content .boxItem .boxItemDate {
+    display: block;
+    width: 116rpx;
+    text-align: right;
+    position: absolute;
+    left: -170rpx;
+    top: -9rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.Timeline-content .boxItem .boxItemText {
+    flex: 1;
+    position: relative;
+    top: -9rpx;
+}
+
+.Timeline-content .boxItem .boxItemDutton {
+    display: block;
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 100%;
+    position: absolute;
+    left: -35rpx;
+}
+
+.Timeline-content .boxItem .boxItemDutton.once {
+    background: #f45c43;
+}
+
+.Timeline-content .boxItem .boxItemDutton.nullce {
+    background: #ddd;
+}
+
+.Timeline-content .boxItem .telphoneColor {
+    color: #6ea1e2 !important;
+}
+
+.Timeline-content .boxItem.fristItemColor {
+    color: #444;
+}
+
+.TimelineLine {
+    padding: 0 30rpx;
+}
+
+.TimelineLine text {
+    display: block;
+    height: 2rpx;
+    background: #e0dede;
+}
+
+.priceStyle,
+.fontSize40 {
+    font-size: 40rpx;
+}
+
+.displayflex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.myOrderItemBtnBoxColor9b9 {
+    color: #9b9191;
+    border: 1px solid #9b9191;
+}
+
+.myOrderItemBtnBoxColorf45 {
+    color: #F45C43;
+    border: 1px solid #F45C43;
+}
+
+.rotate45 {
+    transform: rotate(45deg) translateY(-1px);
+    display: block;
+    font-size: 40rpx;
+}
+
+.time {
+    font-size: 24rpx;
+}

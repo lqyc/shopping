@@ -1,0 +1,58 @@
+/* pages/user/refund/iptNum/iptNum.wxss */
+
+.iptNum {
+    height: 100%;
+    padding: 30rpx 40rpx 0 40rpx;
+}
+.scanCodeBtn{
+  width: 80rpx;
+  height: 80rpx;
+  float: right;
+}
+.iptBox {
+    border: 1px solid #9A9A9A;
+    border-radius: 6rpx;
+    font-size: 30rpx;
+    color: #444444;
+    height: 82rpx;
+    display: flex;
+    align-items: center;
+    margin-bottom: 60rpx;
+}
+
+.iptIcon {
+    width: 44rpx;
+    height: 44rpx;
+    background-position: -118rpx -320rpx;
+    margin-right: 20rpx;
+    display:block;
+margin:19rpx auto;
+
+}
+
+.iptBox .iptBody {
+    padding: 18rpx 20rpx 22rpx 20rpx;
+    flex: 1;
+    /* box-sizing: border-box;
+    height: 82rpx; */
+}
+
+.iptBodyplaceholder {
+    color: #B5B5B5;
+}
+
+.iptBtnBody {
+    background: #F45C43;
+    border-radius: 6rpx !important;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #FFFFFF;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+button[disabled][type="default"],
+wx-button[disabled]:not([type]) {
+    color: #fff;
+    background: #C0C0C0;
+}

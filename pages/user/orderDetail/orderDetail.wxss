@@ -1,0 +1,212 @@
+/* pages/user/orderDetail/orderDetail.wxss */
+page{
+	background: #fff;
+}
+
+.headBox{
+  height: 176rpx;
+  line-height: 176rpx;
+  background: linear-gradient(-135deg, #FF835C 0%, #EB3449 100%);
+}
+.bgGray{
+	background: linear-gradient(-135deg, #CCCCCC 0%, #999999 100%);
+}
+.headBox .innerBox{
+	margin-left: 122rpx;
+	color: #fff;font-family: PingFangSC-Medium;
+font-size: 30rpx;
+}
+.headBox .deliveringTip{
+	position: relative;
+	line-height: 130rpx;
+	width:300rpx;
+
+}
+.headBox .deliveringTip text{
+	position: absolute;
+	top: 46rpx;
+	left: 0;
+}
+.headBox .innerBox view:nth-child(1) span{
+	display: inline-block;
+	width: 97rpx;
+	height: 97rpx;
+	vertical-align: middle;
+	margin-right: 10rpx;
+}
+.headBox .innerBox .orderDone{
+	background-position: -265rpx -575rpx;
+}
+.headBox .innerBox .delivering{
+	background-position: -265rpx -479rpx;
+}
+.headBox .innerBox .delivered{
+	background-position: -265rpx -382rpx;
+}
+.headBox .innerBox .notPaid{
+	background-position: -265rpx -285rpx;
+}
+.orderWrap{
+	padding:0 30rpx 100rpx;
+	background: #fff;
+	border-top:20rpx solid  #F5F5F5;
+} 
+.orderWrap .addressBox{
+	height: 190rpx;
+}
+.orderWrap .addressBox .address{
+	width: 44rpx;
+	height: 44rpx;
+	float: left;
+	background-position: -563rpx -170rpx;
+	margin:70rpx 30rpx 0 10rpx;
+}
+.orderWrap .addressBox .innerWrap{
+	float: left;
+	height: 100%;
+	width: 85%;font-size: 28rpx;
+	line-height: 46rpx;
+color: #444444;
+}
+.orderWrap .addressBox .innerTitle{
+	padding-top:32rpx;
+
+}
+.orderWrap .addressBox .innerTitle .telPhone{
+ float: right;
+}
+.orderWrap .addressBox .innerTitle .userName{
+	width: 200rpx;overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.orderList .goods{
+	height: 300rpx;
+}
+.orderList .goodsBox {
+	height: 230rpx;
+	box-sizing: border-box;
+	padding:30rpx 0;
+}
+.orderList .goodsBox image,.orderList .goodsBox .rightBox{
+	height: 160rpx;
+}
+.orderList .goodsBox image{
+	width: 160rpx;
+}
+.orderList .goodsBox .rightBox{
+width: 68%;
+margin-left: 20rpx;font-size: 28rpx;
+}
+.orderList .goodsBox .rightBox .goodName{
+	margin-bottom: 6rpx;
+}
+.orderList .goodsBox .rightBox .goodName,.goodsTip .deliver,.orderList .goodsBox .rightBox .priceBox{
+color: #444444;
+
+}
+.orderList .goodsBox .rightBox .scale{
+	color: #9A9A9A;
+}
+
+.orderList .refund{
+border:1px solid #9A9A9A;
+border-radius:6px;
+height:60rpx;
+width:68px;
+background:#fff;
+font-size:30rpx;
+color:#9A9A9A;
+line-height:60rpx;
+text-align:center;
+}
+
+.goodsTip {
+	height: 148rpx;
+}
+.goodsTip .deliver{
+	line-height: 80rpx;
+	font-size: 28rpx;
+	height: 80rpx;
+	text-align: right;
+}
+.goodsTip .money{
+	height: 50rpx;
+}
+.goodsTip .money .earn{
+	font-size: 28rpx;
+color: #444444;
+line-height:60rpx;
+}
+.goodsTip .money .sum{
+	font-size: 30rpx;
+}
+.goodsTip .money .sum span{
+	color: #F45C43;
+}
+.goodsTip .money .sum span:nth-child(1){
+	font-size: 28rpx;
+}
+.buttonBox{
+	padding:30rpx 30rpx 0 0;
+height:80rpx;
+position: fixed;
+bottom: 0;
+left: 0;
+background: #fff;
+width: 100%;
+}
+.buttonBox view{
+width: 160rpx;
+height: 60rpx;
+line-height: 60rpx;
+text-align: center;
+border: 1px solid #F45C43;
+border-radius: 6px;
+font-size: 30rpx;
+}
+.buttonBox .deliver{
+	color: #F45C43;
+}
+.buttonBox .receive{
+	background: #F45C43;
+	color: #fff;
+	margin:0 20rpx;
+}
+
+.orderNumber{
+	padding:40rpx 0 5rpx 0;
+	box-sizing: border-box;
+	height: 250rpx;
+	font-size: 28rpx;
+color: #9A9A9A;
+}
+
+.delivedGray{
+	color:#666!important;border:1rpx solid #666!important;
+}
+.btnBgcolor{
+	background: linear-gradient(-135deg, #FF835C 0%, #EB3449 100%);
+	font-size: 36rpx;
+	height:98rpx;
+	line-height:98rpx;
+	width:100%;
+	position:fixed;
+bottom:0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

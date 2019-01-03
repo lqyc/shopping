@@ -1,0 +1,13 @@
+<!--pages/user/addGroup/nestStep/nestStep.wxml-->
+
+<view class="importStep colorWhite">
+    <view>
+将{{robotName}}拉入群内，并在群内发送<span class="iconBackground smile"></span>激活小栗。
+    </view>
+    <view class="copyBtn textCenter" bindtap="checked">完成</view>
+</view>
+<view class="stepImg textCenter">
+	<image src="https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1b83e8f49e3e002452a858"/>
+	<view class="iconBackground stepLeft " bindtap="gofirstStep"></view>
+</view>
+

@@ -1,0 +1,108 @@
+/* pages/user/addGroup/activeRobot/activeRobot.wxss */
+page{
+	
+box-sizing:border-box;
+height: 100%;
+background: #FF8058;
+}
+
+.headTitle{
+	padding-top: 46rpx;
+font-size: 30rpx;
+height: 60rpx;
+margin-right: 30rpx;
+}
+.importStep{
+width:80%;
+margin:40rpx auto 20rpx;
+box-sizing:border-box;
+}
+.importStep .copyBtn{
+	background: #FFFFFF;
+border-radius: 8px;
+width: 244rpx;
+height: 77rpx;
+line-height: 77rpx;
+margin:32rpx auto 42rpx;
+font-family: PingFangSC-Medium;
+font-size: 36rpx;
+color: #F45C43;
+}
+.headTitle .why{
+  margin-left:10rpx;
+display: inline-block;
+width: 56rpx;
+height: 56rpx;
+background-position: -118rpx -408rpx;
+vertical-align: middle;
+}
+.stepImg{
+	position: relative;
+}
+.stepImg image{
+	width:490rpx;
+	height: 808rpx;
+	margin:0 auto;
+}
+.stepImg .stepRight{
+	width: 70rpx;
+	height: 168rpx;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-position: -118rpx -464rpx;
+}
+.stepImg  .indication{
+	position: absolute;
+	bottom: 20rpx;
+	width: 100rpx;
+	margin:0 auto;
+}
+.stepImg  .indication b{
+	width: 17rpx;
+	height: 17rpx;
+	border-radius: 50%;
+}
+
+
+.tipMask{
+	width: 520rpx;
+	height: 600rpx;
+	margin:214rpx auto;
+	background: #FFFFFF;
+border-radius: 6px;
+	font-size: 28rpx;
+padding:0 46rpx;
+box-sizing:border-box;
+position: relative;
+}
+.tipMask .colorGray{
+ line-height:44rpx;
+}
+.tipMask .close{
+	width: 57rpx;
+	height: 57rpx;
+	position: absolute;
+	top:-32rpx;
+right:-59rpx;
+	background-position: -183rpx -188rpx;
+	display: block;
+}
+.tipMask .code{
+	width: 380rpx;
+	height: 380rpx;
+	margin:60rpx auto 40rpx;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

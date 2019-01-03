@@ -1,0 +1,259 @@
+/* pages/order/order.wxss */
+
+.order {}
+
+.order-scroll {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.nodeCodeBox {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nodeCodeBox span {
+    width: 164rpx;
+    height: 164rpx;
+    background-position: -379rpx -126rpx;
+    margin-top: 300rpx;
+    margin-bottom: 14rpx;
+}
+
+.nodeCodeBox text {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #B5ADAD;
+}
+
+.buyNumRight {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    justify-content: space-between;
+    width: 240rpx;
+    height: 60rpx;
+    border-radius: 8rpx;
+}
+
+.buyNumRight text:nth-of-type(1),
+.buyNumRight text:nth-of-type(3) {
+    width: 80rpx;
+    height: 60rpx;
+    font-size: 40rpx;
+    line-height: 60rpx;
+    text-align: center;
+    background: #EEEEEE;
+    box-shadow: 0 5px 0 0 #ccc;
+}
+
+.buyNumRight text:nth-of-type(1):active,
+.buyNumRight text:nth-of-type(3):active {
+    transform: translate(0px, 5px);
+    box-shadow: 0px 0px 0px 0px;
+    outline: none 0;
+}
+
+.buyNumRightStyle {
+    opacity: 0.3;
+}
+
+.buyNumRight text:nth-of-type(1) {
+    border-radius: 8rpx 0 0 8rpx;
+}
+
+.buyNumRight text:nth-of-type(3) {
+    border-radius: 0 8rpx 8rpx 0;
+}
+
+.orderGoodsContent {
+    display: flex;
+    align-items: center;
+}
+
+.orderGoodsContent image {
+    width: 154rpx;
+    height: 154rpx;
+    margin: 0 20rpx;
+}
+
+.orderGoodsContentTextView>text:nth-of-type(2) {
+    margin-left: 20rpx;
+}
+
+.paySumBox {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100rpx;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20rpx;
+    font-size: 28rpx;
+    z-index: 20;
+    border-top:10px solid #f7f7f7;
+}
+
+.hoverPaySubmit {
+    opacity: 0.8;
+}
+
+.paySumItem .sumMoney {
+    /* width: 200rpx; */
+    display: flex;
+    align-items: flex-end;
+}
+
+.paySumBox .paySumItem {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.paySumBox .paySumItem>text {
+    transform: translateY(1px)
+}
+
+.paySumItemLabel {
+    transform: translateY(2px)
+}
+
+.paySumItemLabel .orderCheckbox {
+    width: 120rpx;
+}
+
+.paySumBox .paySumItem view text:nth-of-type(1),
+.paySumBox .paySumItem view text:nth-of-type(3) {
+    transform: translateY(-2px);
+    line-height: 30rpx;
+}
+
+.paySumItem.de {
+    justify-content: flex-end;
+    width: 310rpx;
+}
+
+.paySumItemCNY {
+    font-size: 40rpx;
+    line-height: 42rpx;
+}
+
+.paySumBtn::after {
+    border-radius: 0;
+}
+
+.paySumBtn {
+    border-radius: 0;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 28rpx;
+    color: #fff;
+    background: linear-gradient(163deg, #FF835C, #EB3449);
+    border: none;
+    width: 260rpx;
+    justify-content: center;
+}
+
+.goodsContent {
+    margin-bottom: 110rpx;
+}
+
+.orderLists .orderGoodsTitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 450rpx;
+}
+
+.orderGoodsContentTextView {
+    margin-bottom: 10rpx;
+}
+
+.orderCheckboxItem .orderCheckbox {
+    margin: 30rpx 0 30rpx 30rpx;
+}
+
+.orderCheckboxItem {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    position: absolute;
+    width: 100%;
+    height: 220rpx;
+    box-sizing: border-box;
+    background: #fff;
+    transition: left 0.2s ease-in-out;
+    z-index: 10;
+}
+
+.orderLists .orderPrice {
+    color: #F45C43;
+}
+
+.orderLists checkbox,
+.orderLists .orderGoodsContent,
+.orderLists .orderPrice {
+    float: left;
+}
+
+.orderGoodsContentText {
+    position: relative;
+}
+
+.orderLists {
+    height: 220rpx;
+    position: relative;
+    background: #fff;
+}
+
+.innerdelBox {
+    position: absolute;
+    top: 0;
+    background: #F45C43;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #FFFFFF;
+    width: 120rpx;
+    right: 0;
+    text-align: center;
+    height: 220rpx;
+    line-height: 220rpx;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.order checkbox .wx-checkbox-input {
+    margin-right: 5px;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: 0;
+    border: 1px solid #D1D1D1;
+    background-color: #FFFFFF;
+    border-radius: 100%;
+    width: 44rpx;
+    height: 44rpx;
+    transform: scale(.7, .7);
+    position: relative;
+}
+
+.order checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    color: #FFF !important;
+    background: #F45C43;
+    border-color: #F45C43 !important;
+}
+
+.orderGoodsContentTextViewFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.orderGoodsContentTextViewB5ADAD {
+    color: #B5ADAD;
+}

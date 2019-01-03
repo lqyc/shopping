@@ -1,0 +1,63 @@
+<!--pages/find/find.wxml-->
+<wxs src='../../filter.wxs' module='Filter'></wxs>
+<scroll-view class="findBox bgColor" bindscrolltolower="loadMore" lower-threshold='1' scroll-y>
+    <view class="search-box">
+        <view focus="" class="search-input" bindtap="searchInput">
+            <view class="icons iconBackground"></view>
+            {{inputName}}
+        </view>
+        <view class='searchBtnBox'>
+            <view class="titieWrap">
+                <view class="{{newGoods?'onLine title':'title'}}" catchtap="changeNewGoods">新品</view>
+                <view class="{{volume?'onLine title':'title'}}" catchtap="changeVolume">销量</view>
+                <view catchtap='changeStateClass' class="{{classify?' onLine title':'title'}}">
+                    <view class='displauFlex'>分类<span class="classify iconBackground"></span></view>
+                </view>
+            </view>
+            <view class="textBox clearfix" hidden='{{searchClassState}}'>
+                <button disabled='{{item.states}}' wx:for='{{searchClass}}' we:key='{{index}}' data-name="{{item.names}}" catchtap="checkedThisItem">{{item.names.name}}</button>
+            </view>
+        </view>
+
+    </view>
+    <view wx:if="{{noGoods}}" class="textCenter colorGrayness noSuchGoods">
+        <image src="https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1e50bc7507eb00248c690c" />
+        <view> 咦，暂无相关商品诶~</view>
+    </view>
+    <view wx:else>
+        <view class='findItemBox'>
+            <view wx:for='{{products}}' wx:key='{{index}}'>
+                <navigator url='/pages/find/detail/detail?id={{item.id}}&imgs={{item.coverPhoto}}' class='findItem border-bottom' hover-class="none">
+                    <view class="goodsPic iconBackground">
+                        <image class='findImg' src='{{item.coverPhoto}}' />
+                    </view>
+                    <view class='findContent' hover-class='none'>
+                        <text class='findTitle'>{{Filter.formatText28(item.name)}}</text>
+                        <view class='findText'>
+                            <view class='findPrice '>
+                                <view class="clearfix">
+                                    <view class="{{showEarn?'colorGrayness left':'colorRed left'}}">
+                                        <text style="font-size: 30rpx;line-height: 30rpx">¥</text>
+                                        <text class='findPriceText1'>{{Filter.Float2(item.price)}}</text>
+                                        <text wx:if="{{showEarn}}">/</text>
+                                    </view>
+                                    <view class=' colorRed left ' wx:if="{{showEarn}}">
+                                        <text style="font-size: 30rpx;line-height: 30rpx">赚¥ </text>
+                                        <text class="findPriceText1">{{Filter.Float2(item.earned)}}</text>
+                                    </view>
+                                </view>
+                                <view class="volumeTitle">销量：{{item.saledQuantity}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view wx:if="{{hasRefesh}}" class='displayFlex paddingTop'>
+            <view class="loading"></view>
+        </view>
+        <view wx:else class='displayFlex'>
+            <text> {{loadingMore?'上滑加载更多':'没有更多了'}}</text>
+        </view>
+    </view>
+</scroll-view>

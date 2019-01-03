@@ -1,0 +1,160 @@
+/* pages/user/addGroup/groupSetting/groupSetting.wxss */
+
+.groupSettingBox {
+    background: linear-gradient(-135deg, #FF835C 0%, #EB3449 100%);
+    width: 100%;
+    height: 157rpx;
+    color: #fff;
+    overflow: hidden;
+}
+
+.groupSettingBox .textCenter {
+    width: 49%;
+    height: 87rpx;
+    margin: 30rpx 0;
+}
+
+.groupSettingBox .textCenter .num {
+    font-family: PingFangSC-Medium;
+    font-size: 40rpx;
+}
+
+.groupSettingBox .textCenter .title {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+}
+
+.groupSettingBox .textCenter:nth-child(2) {
+    border-left: 1rpx solid #fff;
+}
+
+.listBox {
+    background: #fff;
+    padding: 0 30rpx;
+    margin-top: 20rpx;
+}
+
+.listBox .robotName,
+.listBox .groupName,
+.headTip {
+    line-height: 100rpx;
+    height: 100rpx;
+    font-size: 28rpx;
+}
+
+.headTip {
+    background: #fff;
+    padding: 0 40rpx;
+    margin-top: 20rpx;
+}
+
+.headTip .right {
+    margin-top: 18rpx;
+    width: 160rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border: 1px solid #F45C43;
+    border-radius: 8px;
+    background: #FEF3F2;
+}
+
+.listBox .robotName {
+    font-family: PingFangSC-Medium;
+}
+.listBox .robotName .item{
+  width: 48%;
+  overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+display:inline-block;
+
+}
+.listBox .groupName {
+    border-top: 1px solid #E0DEDE;
+}
+
+.listBox .robotName .colorRed {
+  margin-left: 20rpx;
+}
+
+.listBox .robotName .arrow {
+    width: 44rpx;
+    height: 44rpx;
+    display: inline-block;
+    background-position: -54rpx -881rpx;
+    vertical-align: middle;
+}
+
+.listBox .robotName .right {
+    width: 50%;
+    text-align: right;
+    height: 100rpx;
+}
+
+.hideHeadbox {
+    animation: hideHead .5s forwards;
+}
+
+@keyframes hideHead {
+    0% {
+        height: 157rpx;
+    }
+    100% {
+        height: 0rpx;
+    }
+}
+
+.modify {
+    height: 80rpx;
+    margin:30rpx auto 0rpx;
+width: 80%;
+}
+.modify .backToMe{
+    height: 80rpx;
+    width: 140rpx;
+line-height: 80rpx;
+  color: #F45C43;
+    position: relative;
+    font-size: 28rpx;
+}
+.modify .backToMe::after{
+    content: "";
+    width: 172rpx;
+    height: 4rpx;
+    background: #F45C43;
+    position: absolute;
+    bottom: -2rpx;
+    left: 0;
+}
+.bottomBtn {
+    position: fixed;
+    bottom: 60rpx;
+    height: 80rpx;
+    z-index: 30;
+    width: 100%;
+}
+
+.bottomBtn view {
+    margin: 0 auto;
+    width: 275rpx;
+    height: 80rpx;
+    background: #F45C43;
+    box-shadow: 0 3px 8px 0 #B5B5B5;
+    border-radius: 100px;
+    color: #fff;
+    text-align: center;
+    line-height: 80rpx;
+}
+.remindTips {
+	font-size: 28rpx;color: #b5bdc6;
+   width: 90%;
+   margin:0rpx auto 90rpx;
+}
+
+
+
+
+
+
+
+

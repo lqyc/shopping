@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/find/find",
+    "pages/order/order",
+    "pages/user/user",
+    "pages/find/detail/detail",
+    "pages/find/pay/pay",
+    "pages/find/sucessPay/sucessPay",
+    "pages/user/myOrder/myOrder",
+    "pages/login/login",
+    "pages/find/search/search",
+    "pages/user/addGroup/addGroup",
+    "pages/user/inviteRegister/inviteRegister",
+    "pages/user/logistics/logistics",
+    "pages/user/refund/refund",
+    "pages/user/refund/iptNum/iptNum",
+    "pages/user/refund/iptMessage/iptMessage",
+    "pages/user/refund/refundDetail/refundDetail",
+    "pages/user/orderDetail/orderDetail",
+    "pages/user/addGroup/activeRobot/activeRobot",
+    "pages/user/addGroup/groupSetting/groupSetting",
+    "pages/user/inviteRegister/friendsInvited/friendsInvited",
+    "pages/user/addGroup/nextStep/nextStep"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "有栗",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#999",
+    "selectedColor": "#F45C43",
+    "borderStyle": "#CCCCCC",
+    "font-size": "20rpx",
+    "font-family": "PingFangSC-Regular",
+    "list": [
+      {
+        "selectedIconPath": "icons/homeSelected.png",
+        "iconPath": "icons/home.png",
+        "pagePath": "pages/find/find",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "icons/carSelected.png",
+        "iconPath": "icons/car.png",
+        "pagePath": "pages/order/order",
+        "text": "购物车"
+      },
+      {
+        "selectedIconPath": "icons/userSelected.png",
+        "iconPath": "icons/user.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+<!--pages/user/addGroup/groupSetting/groupSetting.wxml-->
+<view class="{{showDel?'groupSettingBox colorWhite clearfix':'clearfix groupSettingBox colorWhite hideHeadbox'}}">
+    <view class="textCenter left">
+        <view class="num">{{import}}</view>
+        <view class="title">已导入群</view>
+    </view>
+    <view class="textCenter left">
+        <view class="num">{{remainQuota}}</view>
+        <view class="title">剩余额度</view>
+    </view>
+</view>
+<view class="colorRed headTip" wx:if="{{bindGroup}}">
+    您还未绑定群
+    <!-- <view class="right myOrderItemBtnBoxColorf45 textCenter" bindtap="reSetting">去绑定
+    </view> -->
+</view>
+<view class="  colorRed headTip" wx:if="{{showRemind}}">
+    {{toActive?'您的机器人尚未激活':'您群管理额度已用完'}}
+    <view class="right myOrderItemBtnBoxColorf45 textCenter" bindtap="reSetting">{{toActive?'去激活':'申请额度'}}
+    </view>
+</view>
+<view class="listBox colorGray" wx:for="{{robots}}" wx:key='{{index}}'>
+    <view>
+        <view wx:if="{{toActive}}" class="robotName clearfix" data-id='{{index}}'>
+            <span class="item">{{item.robotName==null?'机器人未激活':item.robotName}}</span>
+        </view>
+        <view class="robotName clearfix" data-id='{{index}}' bindtap="robotDetail" wx:else>
+            <span class="item">{{item.robotName==null?'机器人未激活':item.robotName}}</span>
+            <view class="right" wx:if="{{showDel}}">{{item.groupActivatedSum}}/{{item.groupThresholdSum}} 
+                <span class="colorRed">如何绑定<span class="iconBackground arrow"></span></span>
+            </view>
+        </view>
+        <view class="groupsBox">
+        <view class="groupName" wx:for="{{item.groups}}" wx:key='{{index}}' wx:for-item="item">
+            <view wx:if="{{showDel}}">
+                <text>{{item.name}}</text>
+            </view>
+            <view data-id='{{index}}' data-item="{{item}}" catchtap="delRobot" wx:else>
+                <text>{{item.name}}</text>
+                <view class="right colorRed" wx:if="{{!showDel}}">删除</view>
+            </view>
+        </view>
+        </view>
+    </view>
+</view>
+<view  class="modify  textCenter" bindtap="exitGroupseting">
+    <text class="backToMe">返回至【我的】</text>
+</view>
+<view  class="remindTips textCenter">若已绑定群，但未更新，请返回【我的】重新进入。</view>
+
+<view class="bottomBtn colorWhite" bindtap="delGroup" wx:if="{{showDel}}">
+    <view>删除群</view>
+</view>
+<view class="bottomBtn colorWhite" bindtap="doneSetting" wx:else>
+    <view>完成</view>
+</view>

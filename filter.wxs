@@ -1,0 +1,88 @@
+var formatTime = function(date) {
+        var year = date.getFullYear()
+        var month = date.getMonth() + 1
+        var day = date.getDate()
+        var hour = date.getHours()
+        var minute = date.getMinutes()
+        var second = date.getSeconds()
+
+        return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+    }
+    /**
+     * 格式化数据，两位小数
+     */
+var Float2 = function(num) {
+        var sum = parseFloat(num);
+        if (sum) {
+            return sum.toFixed(2);
+        } else {
+            return '0.00'
+        }
+
+    }
+    /**
+     * 补零
+     */
+var formatNumber = function(n) {
+        n = n.toString()
+        return n[1] ? n : '0' + n
+    }
+    /**
+     * 手机号码格式化
+     */
+var formatPhoneNum = function(arr) {
+    var arr1 = arr.substring(0, 3);
+    var arr2 = arr.substring(7);
+    return arr1 + '****' + arr2;
+};
+/**
+ * 匹配商品售后状态
+ */
+var formatProductionState = function(n) {
+    var i = parseInt(n);
+    switch (i) {
+        case 0:
+            return '等待买家付款';
+
+    }
+};
+
+var formatText28 = function(str) {
+    if (str) {
+        if (str.length > 32) {
+            return str.substring(0, 26) + '...';
+        } else {
+            return str
+        }
+    }
+};
+
+var formatText34 = function(str) {
+    if (str) {
+        if (str.length > 34) {
+            return str.substring(0, 34) + '...';
+        } else {
+            return str
+        }
+    }
+};
+
+var FormatImgLen = function(arr) {
+    if (arr.length > 6) {
+        return arr.slice(0, 6);
+    } else {
+        return arr;
+    }
+}
+
+
+
+module.exports = {
+    formatTime: formatTime,
+    formatNumber: formatNumber,
+    Float2: Float2,
+    formatPhoneNum: formatPhoneNum,
+    formatText28: formatText28,
+    formatText34: formatText34,
+    FormatImgLen: FormatImgLen
+}

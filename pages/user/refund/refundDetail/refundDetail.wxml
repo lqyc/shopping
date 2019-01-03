@@ -1,0 +1,64 @@
+<!--pages/user/refund/refundDetail/refundDetail.wxml-->
+<wxs src='../../../../filter.wxs' module='Filter'></wxs>
+<view class="refunDetail">
+    <view class="refunDetailHeader bgColor border-top">
+        <view class="refunDetailHeaderContent">
+            <view class="refunDetailHeaderContentImgBox" bindtap='lookImg'>
+                <image src='https://cloud.gemii.cc/lizcloud/fs/noauth/media/59fc1eb2f49e3e0024529fda' class="refunDetailHeaderContentImg"></image>
+                <!-- <text class="refunDetailHeaderContentImgText">共2个商品</text> -->
+            </view>
+            <view class="refunDetailHeaderContentText">
+                <text class="refunDetailHeaderContentTextAdr">{{'SAXTON 水果啤酒 苹果 梨 桃子客户端 萨克大时代'}}</text>
+                <text class="refunDetailHeaderContentTextNum">¥{{Filter.Float2(39)}}</text>
+                <view class="refunDetailHeaderContentTextMessage">
+                    <text class="refunDetailHeaderContentTextMessageNum">{{'300ml'}}, {{'四种混合'}}</text>
+                    <view class="displayflex"><text class="rotate45">+</text>{{'2'}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="bgColor marginBottom100">
+        <view class="TimelineBOX">
+            <view class="TimelineMessages">
+                <text class="border-bottom">退款进度</text>
+            </view>
+            <view class="Timeline bgColor">
+                <view class="Timeline-content">
+                 <view class="boxItem">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">12:34</view></view>
+                        <text class="boxItemDutton nullce"></text>
+                           <view> 已完成</view>
+                    </view>
+                    <view class="boxItem">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">12:34</view></view>
+                        <text class="boxItemDutton nullce"></text>
+                           <view class="myOrderItemBtnBoxColorf45 editNumber" bindtap='skipIptNum'> 填写单号</view>
+                    </view>
+                    <view class="boxItem">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">12:34</view></view>
+                        <text class="boxItemDutton nullce"></text>
+                           <view class="boxItemText"> 我已发货</view>
+                        <view >物流单号：29304875693203 中通快递</view>
+                    </view>
+                    <view class="boxItem">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">12:34</view></view>
+                        <text class="boxItemDutton nullce"></text>
+                        <view class="boxItemText">等待商家处理</view>
+                           <view> 商家正在受理你得退款，请耐心等待</view>
+                         </view>
+                    <view class="boxItem">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">12:34</view></view>
+                        <text class="boxItemDutton nullce"></text>
+                        <view class="boxItemText">已提交</view>
+                        <view class="boxItemText">退款编号：983467279</view>
+                        <view class="boxItemText">退款类型：仅退款</view>
+                        <view class="boxItemText">退款金额：¥39</view>
+                        <view class="boxItemText">退款原因：多拍/错拍</view>
+                        <view class="boxItemText">申请时间：2017-11-03  16:06:23</view>                        
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="refunDetailBtnBox {{btnState?'backgroundC0C0C0':'bgColorRed'}}" bindtap="cancelRefund">取消退款</view>
+</view>

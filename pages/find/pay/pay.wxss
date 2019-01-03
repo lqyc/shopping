@@ -1,0 +1,178 @@
+/* pages/find/pay/pay.wxss */
+
+.messageSocket,
+.monecySum {
+    margin-bottom: 40rpx;
+}
+
+.goodsMessage {
+    padding: 0 30rpx;
+    font-size: 28rpx;
+}
+
+.monecySum,
+.messageSocket {
+    padding: 30rpx 30rpx;
+    font-size: 28rpx;
+}
+
+.sumMoney,
+.shipping,
+.messageBoard {
+    padding: 30rpx 0;
+}
+
+.monecySum view,
+.messageSocket,
+.sumMoney,
+.shipping,
+.messageBoard,
+.payaAdr>view,
+.goodsMessageBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shipping>view {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 26rpx;
+}
+
+.payaAdr {
+    min-height: 217rpx;
+}
+
+.payaAdrimg {
+    width: 100%;
+    display: block;
+    height: 8rpx!important;
+}
+
+.addAdrimg {
+    width: 52rpx;
+    height: 52rpx;
+    margin-right: 20rpx;
+    background-position: -118rpx -225rpx;
+}
+
+.rightArrow {
+    background-position: -54rpx -478rpx;
+    margin-right: 30rpx;
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.payaAdr>view {
+    width: 100%;
+    min-height: 217rpx;
+    padding: 0 20rpx;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 28rpx;
+    color: #333333;
+}
+
+.payaAdr .addAdr,
+.payaAdr .selectAdr {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addAdr .addAdrtext {
+    flex: 1;
+}
+
+.shopMessage {
+    padding-bottom: 15rpx;
+}
+
+.goodsMessageContent view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.goodsMessageBox {
+    padding: 30rpx 0;
+}
+
+.goodsMessageBox image {
+    width: 150rpx;
+    height: 150rpx;
+    margin-right: 25rpx;
+}
+
+.messageBoard input,
+.goodsMessageContent,
+.payaAdr>view text:nth-of-type(2) {
+    flex: 1;
+}
+
+.goodsMessageContent>view:nth-of-type(1) {
+    margin-bottom: 30rpx;
+}
+
+.monecySum view:nth-of-type(3),
+.sumMoney text:nth-of-type(2) {
+    color: rgb(223, 86, 86);
+}
+
+.payFooterBtn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100rpx;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28rpx;
+}
+
+.payFooterBtn .payFooterEnter {
+    flex: 1;
+    height: 100rpx;
+    line-height: 100rpx;
+    justify-content: center;
+    font-family: PingFangSC-Medium;
+    font-size: 36rpx;
+}
+
+.payFooterBtn>view {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 30rpx;
+}
+
+.payFooterBtn>view text {
+    font-family: PingFangSC-Regular;
+    color: #333333;
+}
+
+.payFooterBtn>view text:nth-of-type(2) {
+    margin-right: 30rpx;
+}
+
+.marginBottom20 {
+    margin-bottom: 20rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.marginBottom20 text:nth-of-type(2) {
+    text-align: right;
+}
+
+.payFooternum {
+    display: flex;
+    align-items: flex-end;
+}
+
+.colorB5ADAD {
+    color: #B5ADAD
+}

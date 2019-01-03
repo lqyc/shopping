@@ -1,0 +1,48 @@
+/* pages/user/addGroup/nestStep/nestStep.wxss */
+page{
+	overflow:hidden;
+background: #FF8058;
+padding-top:60rpx;
+
+}
+.importStep{
+width:80%;
+margin:0rpx auto 20rpx;
+height:250rpx;
+box-sizing:border-box;
+}
+.importStep .copyBtn{
+	background: #FFFFFF;
+border-radius: 8px;
+width: 244rpx;
+height: 77rpx;
+line-height: 77rpx;
+margin:42rpx auto 42rpx;
+font-family: PingFangSC-Medium;
+font-size: 36rpx;
+color: #F45C43;
+}
+.stepImg{
+	position: relative;
+}
+.stepImg image{
+	width:490rpx;
+	height: 838rpx;
+	margin:0 auto;
+}
+.stepImg .stepLeft{
+	width: 70rpx;
+	height: 168rpx;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-position: -118rpx -632rpx;
+}
+.importStep .smile{
+	background-position: -54rpx -842rpx;
+	width: 40rpx;
+	height: 40rpx;
+	display: inline-block;
+	vertical-align:middle;
+
+}

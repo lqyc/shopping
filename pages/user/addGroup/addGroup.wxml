@@ -1,0 +1,9 @@
+<!--pages/user/addGroup/addGroup.wxml-->
+<view class="bindBox">
+	<view class="bindWrap">
+    <input type="text" placeholder="请输入您的微信号/手机号" class="colorGray"  bindinput="inputWechat" />
+    <button class="{{applying?'sureBtn  textCenter bgGray':'sureBtn bgRed textCenter'}}" bindtap="activeRobot" hover-class="activeBtn" disabled="{{applying}}">{{applying?'正在申请...':'立刻申请'}}</button>
+    <view class="bottomTip">注：输入微信号小助手小栗将自动添加您为好友, 微信号确认后不可更改，请确认无误后申请。
+    </view>
+</view>
+</view>

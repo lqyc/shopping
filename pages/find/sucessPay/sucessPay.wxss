@@ -1,0 +1,44 @@
+/* pages/find/sucessPay/sucessPay.wxss */
+.sucessPay{height:100%;}
+.sucessPayHeader{width:100%;height:370rpx;padding:40rpx 40rpx 0 40rpx;box-sizing:border-box;}
+.sucessPayHeaderImg{display:flex;align-items:center;justify-content:center;margin-bottom:68rpx;}
+.sucessPayHeaderImg .successIocn{width:96rpx;height:96rpx;margin-right:15rpx;background-position:-264rpx -126rpx;}
+.sucessPayHeaderTitle{font-family:PingFangSC-Regular;font-size:30rpx;color:#333333;}
+.sucessPayHeaderContent{display:flex;margin-bottom:20rpx;}
+.sucessPayHeaderContentText,.welcomeLogin{display:flex;flex-direction:column;}
+.sucessPayHeaderContentText text{flex:1;margin-bottom:10rpx;}
+.welcomeLogin{align-items:center;padding:25rpx 0;font-size:26rpx;}
+.welcomeLogin image{width:160rpx;height:130rpx;border-radius:4px;margin-bottom:40rpx;}
+.sucessPayHeaderContentTextName{font-family:PingFangSC-Regular;font-size:28rpx;color:#999999;}
+.sucessPayHeaderContentTextName1{color:#333333;}
+.lookOrder{font-size:30rpx;text-align:center;width:100%;}
+.lookOrder .toMyOrdes{height:128rpx;width:100%;}
+.goBackHome{height:308rpx;display:flex;align-items:center;justify-content:center;}
+.goBackHome button{background:#FFFFFF;border:1px solid #F45C43;border-radius:8rpx;line-height:80rpx;height:80rpx;width:275rpx;font-size:30rpx;color:#F45C43;text-align:center;}
+.recommendProduction{display:flex;flex-wrap:wrap;justify-content:space-between;width:100%;padding:0 40rpx;box-sizing:border-box;}
+.recommendProductionItem{width:315rpx;float:left;font-size:26rpx;text-align:center;margin-bottom:49rpx;}
+.recommendProduction .recommendName{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:15rpx;}
+.recommendMoney{text-align:right;font-size:24rpx;}
+.recommendMoneyNum{font-size:30rpx;}
+.recommendProduction .recommendImg{width:315rpx;height:315rpx;margin-bottom:10rpx;}
+.recommendProduction .youLike{display:block;width:100%;color:#666;font-size:28rpx;padding:20rpx 0;}
+.bannerImg{width:100%;height:256rpx;}
+.updataBox{height:80rpx;display:flex;align-items:center;justify-content:center;font-size:28rpx;color:#FF835C;}
+.updataBox .updateIcon{width:40rpx;height:40rpx;background-position:-54rpx -522rpx;}
+.loginMask .bannerImg{
+	width: 80%;
+	margin:80rpx auto 0;
+	text-align: center;
+	height:990rpx;
+}
+.loginMask .bannerImg image{
+	width: 100%;
+	height: 990rpx;
+  border-radius: 10rpx;
+}
+.loginMask .maskClose{
+	background-position: -188rpx -183rpx;
+	width: 57rpx;
+	height: 57rpx;
+	margin:20rpx auto;
+}

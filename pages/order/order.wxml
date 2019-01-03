@@ -1,0 +1,60 @@
+<!--pages/order/order.wxml-->
+<wxs src='../../filter.wxs' module='Filter'></wxs>
+<!-- <web-view src="https://mp.weixin.qq.com/"></web-view> -->
+<view class="nodeCodeBox bgColor border-top" wx:if='{{!orderGoods.length}}'>
+    <span class="iconBackground"></span>
+    <text>快去挑选您的商品吧</text>
+</view>
+<scroll-view scroll-y='true' scroll-x='false' wx:else class="order-scroll">
+    <view class='order' bindtouchstart="touchS">
+        <view class='goodsContent'>
+            <checkbox-group bindchange="orderCheckboxChange" class='orderCheckbox'>
+                <view wx:for="{{orderGoods}}" wx:key='{{index}}' class="border-bottom orderLists">
+                    <label class="orderCheckboxItem " bindtouchmove="touchM" bindtouchend="touchE" style='{{item.txtStyle}}' data-id='{{index}}'>
+                        <view class='orderGoodsContent'>
+                        <view class="orderCheckbox" >
+                            <checkbox value="{{item.id}},{{item.skuId}}" wx:key='{{index}}' checked='{{orderAllCheck}}'/>
+                        </view>
+                        <image src='{{item.img}}' />
+                        <view class='orderGoodsContentText'>
+                            <view class='orderGoodsContentTextView orderGoodsTitle'>
+                                <text class="orderGoodsTitleName">{{Filter.formatText28(item.name)}}</text>
+                            </view>
+                            <view class='orderGoodsContentTextView'>
+                                <text class="orderGoodsContentTextViewB5ADAD">{{item.valueSku}}</text>
+                            </view>
+                            <view class="orderGoodsContentTextView orderGoodsContentTextViewFlex">
+                                <text class='orderPrice'>¥<text class="paySumItemCNY">{{Filter.Float2(item.price)}}</text></text>
+                                <view class='buyNumRight'>
+                                    <text catchtap='buyNumSelfMinus' class="{{item.num>1?'':'buyNumRightStyle'}}" data-id='{{item.id}}' data-skuid='{{item.skuId}}'>-</text>
+                                    <text>{{item.num}}</text>
+                                    <text catchtap='buyNumSelfAdd' data-id='{{item.id}}' data-skuid='{{item.skuId}}'>+</text>
+                                </view>
+                            </view>
+                        </view>
+                        </view>
+                    </label>
+                    <view class="innerdelBox " catchtap='delProduction' data-id='{{item.id}}' data-skuid='{{item.skuId}}'>删除</view>
+                </view>
+            </checkbox-group>
+        </view>
+        <view class='paySumBox  bgColor'>
+            <checkbox-group bindchange="orderAllCheckboxChange" class='paySumItem'>
+                <label class="paySumItemLabel">
+                <view class="{{orderChenk?'orderCheckbox orderChecked':'orderCheckbox'}}">
+                <checkbox value="true" checked='{{orderChenk}}'/>全选
+            </view>
+            </label>
+            </checkbox-group>
+            <view class='paySumItem de'>
+                <text>合计：</text>
+                <view class='colorRed sumMoney'>
+                    <text>¥</text>
+                    <text class='paySumItemCNY'>{{Filter.Float2(paySumMoney)}}</text>
+                    <text>元</text>
+                </view>
+            </view>
+            <button class='paySumItem paySumBtn' hover-class='hoverPaySubmit' bindtap='payNow'>微信支付</button>
+        </view>
+    </view>
+</scroll-view>

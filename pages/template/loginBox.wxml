@@ -1,0 +1,40 @@
+<template name="login">
+  <view class="login">
+    <form class='clearfix' bindsubmit="formSubmitL">
+     <view class='loginInput {{userNameFocus ? "focusIpt" : ""}}'>
+      <input  name="account"  class="account" placeholder-class='ipt' type="text" placeholder="栗子云账号/手机号" bindinput="hideErrorUserL" bindfocus='userNameFocusL' bindblur='userNameBlurL' maxlength='11'/>
+      <view class="error" wx:if="{{errorUserL}}">{{nullData?'用户名不能为空':'用户名错误'}}</view>  
+     </view>
+      <view class='loginInput {{userPsdFocus ? "focusIpt" : ""}}'>
+      <input  name="password" class="password" placeholder-class='ipt' type="password" placeholder="6位以上密码" bindinput="hideErrorL" bindblur='userPsdBlurL' bindfocus='userPsdFocusL' maxlength='20'/>   
+      <view class="error" wx:if="{{errorPasswordL}}">{{nullData?'密码不能为空':'密码错误'}}</view>  
+     </view>
+     <button class="{{loginOn?'loginBtn onLogin':'loginBtn'}}" hover-class="{{loginOn?'hoverLoginBtn':''}}" formType="submit"  open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
+     <view class="right forgetPassword" bindtap="forgetPassword">忘记密码？</view>
+    </form>
+  </view>
+</template>
+
+<template name="regist">
+  <view class="login">
+    <form class='clearfix' bindsubmit="formSubmitR">
+      <view class='phoneIpt {{phoneIptFocus ? "focusIpt" : ""}}'>
+    <input placeholder='请输入11位手机号' placeholder-class='ipt' bindinput='phoneIpt' maxlength='11' bindfocus='phoneFocus' bindblur='phoneBlur'></input>
+    <text class='textError'>{{phoneError}}</text>
+  </view>
+  <view class='phoneIpt {{codeFocus ? "focusIpt" : ""}}'>
+    <input placeholder='输入验证码' placeholder-class='ipt' class='codeIpt' bindinput='codeIpt' maxlength='6' bindfocus='codeFocus' bindblur='codeBlur'></input>
+    <text class='textError codeTextError'>{{codeError}}</text>
+    <button class="codeBtn {{!CodeState ? 'codeBtnSelectColor' : ''}}" disabled='{{CodeState}}' bindtap='getCode'>{{codeText}}</button>
+  </view>
+      <view class='loginInput {{userPsdFocusRe ? "focusIpt" : ""}}'>
+      <input  name="password" class="password" type="password" placeholder-class='ipt' placeholder="6位以上密码" bindinput="hideErrorR" bindblur='userPsdBlurR' bindfocus='userPsdFocusR' maxlength='22'/>   
+      <view class="error" wx:if="{{errorPasswordR}}">密码长度不够</view>  
+     </view>
+     <!--  <view class='loginInput {{userCodeFocus ? "focusIpt" : ""}}'>
+      <input  name="recommend" class="password" type="text" placeholder-class='ipt' placeholder="请输入推荐码" bindblur='userCodeBlurR' bindfocus='userCodeFocusR'/>   
+     </view> -->
+     <button class="{{registerOn?'loginBtn onLogin':'loginBtn'}}" hover-class="{{registerOn?'hoverLoginBtn':''}}" formType="submit" open-type="getUserInfo" bindgetuserinfo="getUserInfo">{{loginBtnWrap?'注册':'确定'}}</button>
+    </form>
+  </view>
+</template>

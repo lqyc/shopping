@@ -1,0 +1,153 @@
+/* pages/user/refund/refund.wxss */
+
+.refund {
+    height: 100%;
+}
+
+.selectBox {
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+    border-bottom: 1px solid #E0DEDE;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.selectBoxItem {
+    line-height: 100rpx;
+    height: 100rpx;
+    flex: 1;
+    text-align: center;
+    border-bottom: 8rpx solid #fff;
+    font-family: PingFangSC-Regular;
+    color: #444444;
+    box-sizing: border-box;
+}
+
+.selectBoxItem radio {
+    display: none;
+}
+
+.selected {
+    border-bottom: 8rpx solid #F45C43;
+    font-family: PingFangSC-Medium !important;
+}
+
+.selectBoxItemContentBox {
+    height: 100%;
+}
+
+.myOrderContent {
+    font-size: 28rpx;
+    margin-top: 100rpx;
+    height: 100%;
+}
+
+.myOrderItems {
+    padding: 42.5rpx 30rpx 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.myOrderItem {
+    display: flex;
+    padding-bottom: 10rpx;
+}
+
+.myOrderItemContent {
+    padding-bottom: 17rpx;
+    margin-bottom: 15rpx;
+}
+
+.myOrderItemContent>view {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.myOrderItem.bwt {
+    justify-content: space-between;
+    padding-bottom: 20rpx;
+}
+
+.myOrderItem.flexEnd {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.flexEndStyle {
+    padding-bottom: 3px;
+}
+
+.myOrderItemBtnBox {
+    margin-top: 30rpx;
+}
+
+.myOrderItem.myOrderItemBtnBox text {
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    border-radius: 6rpx;
+    width: 160rpx;
+    text-align: center;
+    height: 60rpx;
+    line-height: 60rpx;
+    box-sizing: border-box;
+}
+
+.myOrderItemBtnBoxColor9b9 {
+    color: #9B9191;
+    border: 1px solid #9B9191;
+}
+
+
+
+.myOrderItem>image {
+    width: 160rpx;
+    height: 160rpx;
+    background: #000
+}
+
+.myOrderItem>view {
+    flex: 1;
+}
+
+.myOrderItem>view .myOrderItem {
+    padding: 0 0 0 30rpx;
+}
+
+.myColor9B9191 {
+    color: #9B9191;
+}
+
+.myColor444 {
+    color: #444;
+}
+
+.textRight {
+    justify-content: flex-end
+}
+
+.noCodeBox {
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 169rpx;
+    box-sizing: border-box;
+}
+
+.noCode {
+    width: 146rpx;
+    height: 184rpx;
+    background-position: -379rpx -290rpx;
+    display: block;
+    margin-bottom: 20rpx;
+}
+
+.noCodeText {
+    font-size: 28rpx;
+    color: #B5ADAD;
+}

@@ -1,0 +1,17 @@
+/* pages/user/inviteRegister/friendsInvited/friendsInvited.wxss */
+
+ .invitePic{
+	background: url(https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1b8534f49e3e0026631dea)no-repeat;
+	background-size: cover;width:100%;
+	height:100%;
+	overflow: hidden;
+	position: relative;
+}
+ .invitePic .username{
+font-size:30rpx;
+position:absolute;
+bottom:23%;
+right:48px;
+
+
+}

@@ -1,0 +1,50 @@
+/* pages/user/inviteRegister/inviteRegister.wxss */
+.inviteRegister{
+	width: 476rpx;
+	height: 762rpx;
+	margin:0rpx auto 20rpx;
+box-sizing:border-box;
+padding-top:70rpx;
+
+}
+.inviteRegister .invitePic{
+	background: url(https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1b84e5f49e3e002452a85f)no-repeat;
+	background-size: cover;width: 476rpx;
+	height: 762rpx;
+	position: relative;
+}
+.inviteRegister .invitePic .username{
+	font-size: 28rpx;
+	position: absolute;
+	bottom:216rpx;
+right:34px;
+
+}
+.sendFriend{
+	color: #444444;
+	width:554rpx!important;
+margin:60rpx auto 0;
+padding-left:10rpx;
+
+}
+.sendFriend .cutLine{
+background:#444;
+width: 200rpx;
+}
+.textCenter{
+	width:220rpx;
+	margin:18rpx auto 0;
+font-size: 28rpx;
+color: #666666;
+}
+.textCenter .share{
+	background-position:-379rpx -474rpx;
+width:166rpx;
+height:170rpx;
+
+}
+button,button::after{
+	border:none;
+	border-radius: 0;
+	background: transparent;
+}

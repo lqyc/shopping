@@ -1,0 +1,108 @@
+<!--pages/user/logistics/logistics.wxml-->
+<scroll-view class="logistics" scroll-y='{{scrollYState}}'>
+    <view class="logisticsHeader bgColor border-top">
+        <view class="logisticsHeaderContent">
+            <view class="logisticsHeaderContentImgBox" bindtap='lookImg'>
+                <image src='/icons/liziLogo.png' class="logisticsHeaderContentImg"></image>
+                <text class="logisticsHeaderContentImgText">共{{imgArr.length}}个商品</text>
+            </view>
+            <view class="logisticsHeaderContentText">
+                <text class="logisticsHeaderContentTextAdr">收货人地址：{{'上海市，虹口区，欧阳路196号法兰桥创业园10号楼701'}}</text>
+                <view class="logisticsHeaderContentTextMessage">
+                    <text class="logisticsHeaderContentTextMessageNum">订单编号：{{'928346756287918'}}</text>
+                    <text class="logisticsHeaderContentTextMessageSum">{{'1'}}个包裹</text>
+                </view>
+            </view>
+        </view>
+        <image src='/icons/line.png' class="logisticsHeaderImg"></image>
+    </view>
+    <view class="bgColor">
+        <view class="TimelineBOX">
+            <view class="TimelineMessage">
+                <text>{{'中通快递'}}：{{'9483723049873289034'}}</text>
+                <text>{{'包裹1'}}</text>
+            </view>
+            <view class="Timeline bgColor">
+                <view class="Timeline-content">
+                    <view class="boxItem fristItemColor">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">12:34</view></view>
+                        <text class="boxItemDutton once"></text>
+                        <text class="boxItemText">我的世界你不会明白，所以请你走开<text class="telphoneColor">15656942305</text></text>
+                    </view>
+                    <view class="boxItem">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">12:34</view></view>
+                        <text class="boxItemDutton nullce"></text>
+                        <text class="boxItemText">我的世界你不会明白，所以请你走开</text>
+                    </view>
+                    <view class="boxItem">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">12:34</view></view>
+                        <text class="boxItemDutton nullce"></text>
+                        <text class="boxItemText">我的世界你不会明白，所以请你走开我的世界你不会明白，所以请你走开</text>
+                    </view>
+                    <view class="boxItem">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">12:34</view></view>
+                        <text class="boxItemDutton nullce"></text>
+                        <text class="boxItemText">我的世界你不会明白，所以请你走开我的世界你不会明白，所以请你走开<text class="telphoneColor">15656942305</text></text>
+                    </view>
+                    <view class="boxItem">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">12:34</view></view>
+                        <text class="boxItemDutton nullce"></text>
+                        <text class="boxItemText">我的世界你不会明白，所以请你走开我的世界你不会明白，所以请你走开我的世界你不会明白，所以请你走开</text>
+                    </view>
+                </view>
+            </view>
+            <view class="TimelineLine">
+                <text></text>
+            </view>
+        </view>
+        <view class="TimelineBOX">
+            <view class="TimelineMessage">
+                <text>{{'中通快递'}}：{{'9483723049873289034'}}</text>
+                <text>{{'包裹2'}}</text>
+            </view>
+            <view class="Timeline bgColor">
+                <view class="Timeline-content">
+                    <view class="boxItem fristItemColor">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">12:34</view></view>
+                        <text class="boxItemDutton once"></text>
+                        <text class="boxItemText">我的世界你不会明白，所以请你走开<text class="telphoneColor">15656942305</text></text>
+                    </view>
+                    <view class="boxItem">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">10:34</view></view>
+                        <text class="boxItemDutton nullce"></text>
+                        <text class="boxItemText">我的世界你不会明白，所以请你走开</text>
+                    </view>
+                    <view class="boxItem">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">08:34</view></view>
+                        <text class="boxItemDutton nullce"></text>
+                        <text class="boxItemText">我的世界你不会明白，所以请你走开我的世界你不会明白，所以请你走开</text>
+                    </view>
+                    <view class="boxItem">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">12:34</view></view>
+                        <text class="boxItemDutton nullce"></text>
+                        <text class="boxItemText">我的世界你不会明白，所以请你走开我的世界你不会明白，所以请你走开<text class="telphoneColor">15656942305</text></text>
+                    </view>
+                    <view class="boxItem">
+                        <view class="boxItemDate"><view>09-10</view><view class="time">12:34</view></view>
+                        <text class="boxItemDutton nullce"></text>
+                        <text class="boxItemText">我的世界你不会明白，所以请你走开我的世界你不会明白，所以请你走开我的世界你不会明白，所以请你走开</text>
+                    </view>
+                </view>
+            </view>
+            <view class="TimelineLine">
+                <text></text>
+            </view>
+        </view>
+    </view>
+    <view class="previewBox" hidden='{{scrollYState}}'>
+        <swiper class="previewSwiper">
+            <swiper-item class="previewSwiperItem" wx:for='{{imgArr.arr}}' wx:key='{{index}}'>
+                <view>
+                    <image src='{{item}}'></image>
+                    <text>{{index+1}}/{{imgArr.length}}</text>
+                    <span class="delIcon iconBackground icons" catchtap='closePreview'></span>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</scroll-view>

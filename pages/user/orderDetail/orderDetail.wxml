@@ -1,0 +1,116 @@
+<!--pages/user/orderDetail/orderDetail.wxml-->
+<view class="{{orderDone=='未付款'?'headBox bgGray':'headBox'}}">
+	<view class="innerBox clearfix">
+		<view class="left">
+		<span class="iconBackground orderDone" wx:if="{{orderDone=='已完成'}}"></span>
+		<span class="iconBackground notPaid" wx:elif="{{orderDone=='未付款'}}"></span>
+		<span class="iconBackground delivered" wx:elif="{{orderDone=='未发货'}}"></span>
+		<span class="iconBackground delivering" wx:elif="{{orderDone=='运输中'}}"></span>
+ </view>
+        <view class="left">
+		<span wx:if="{{orderDone=='已完成'}}">{{'订单已完成'}}</span>
+		<span wx:elif="{{orderDone=='未发货'}}">{{'等待卖家发货'}}</span>
+		<view wx:elif="{{orderDone=='运输中'}}" class="deliveringTip">{{'快递运输中'}}
+		<text>{{'剩9天23小时确认收货'}}</text>
+		</view>
+		<view wx:elif="{{orderDone=='未付款'}}" class="deliveringTip">{{'等待买家付款'}}
+		<text>{{'剩2天23小时自动关闭'}}</text>
+		</view>
+	</view>
+	</view>
+</view>
+<view class="orderWrap">
+	<view class="addressBox border-bottom clearfix">
+		<view class="iconBackground address"></view>
+		<view class="innerWrap">
+			<view class="innerTitle clearfix">
+				<span class="userName">{{'栗子妈妈'}}</span>
+				<span class="telPhone">{{'18720384982'}}</span>
+			</view>
+			<view class="addressDetail">上海市，虹口区，欧阳路196号法兰桥创业园10号
+楼701</view>
+		</view>
+	</view>
+	<view class="orderList border-bottom">
+        <view class="goods clearfix">
+			<view class="goodsBox clearfix">
+				<image src="https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1bd25cc8e6430033fbb6fd" class="left"/>
+				<view class="rightBox right">
+					<view class="goodName">{{'SAXTON 水果啤酒 苹果 梨 桃子客户端萨克大时代'}}</view>
+					<view class="scaleBox">
+						<view class="scale left">
+							<span>{{'300ml'}}</span><span>{{'四种混合'}}</span>
+						</view>
+						<view class="priceBox right">
+							<view class="price">¥{{'37'}}</view>
+							<view class="volume">✖{{'1'}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="refund right" catchtap='gotoRefund'>退款</view>
+		</view>
+		<view class="goods clearfix">
+			<view class="goodsBox">
+				<image src="https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1bd25cc8e6430033fbb6fd" class="left"/>
+				<view class="rightBox right">
+					<view class="goodName">{{'SAXTON 水果啤酒 苹果 梨 桃子客户端萨克大时代'}}</view>
+					<view class="scaleBox">
+						<view class="scale left">
+							<span>{{'300ml'}}</span><span>{{'四种混合'}}</span>
+						</view>
+						<view class="priceBox right">
+							<view class="price">¥{{'37'}}</view>
+							<view class="volume">✖️{{'1'}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="refund right" catchtap='gotoRefund'>退款</view>
+		</view>
+	</view>
+    
+    <view class="goodsTip clearfix border-bottom">
+    	<view class="deliver ">配送方式：{{'快递免邮'}}</view>
+    	<view class="money">
+    		<view class="earn left">赚：¥{{'45'}}</view>
+    		<view class="sum right">合计：<span>¥</span><span style="font-size: 40rpx;">{{'34'}}</span></view>
+    	</view>
+    </view>
+    <view class="{{orderDone=='未付款' ?'orderNumber ':'orderNumber border-bottom'}}">
+    	订单编号：{{'298654732019893784'}}
+    </view>
+</view>
+
+<view class="buttonBox clearfix" wx:if="{{orderDone=='运输中'}}">
+    	<view class="receive right">确认收货</view>
+    	<view class="deliver right" bindtap="skipLogistics">查看物流</view>
+ </view>
+ <view class="buttonBox clearfix" wx:if="{{orderDone=='已完成'}}">
+ 	<view class="receive right">确认收货</view>
+    	<view class="deliver right delivedGray" bindtap="skipLogistics" style="margin-right: 20rpx">查看物流</view>
+ </view>
+ 	<view class="textCenter colorWhite btnBgcolor" wx:if="{{orderDone=='未付款'}}">立即付款</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

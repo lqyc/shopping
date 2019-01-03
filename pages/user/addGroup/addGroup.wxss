@@ -1,0 +1,50 @@
+/* pages/user/addGroup/addGroup.wxss */
+page{
+	overflow: hidden;
+}
+.bindBox{
+	background: url(https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1b846bf49e3e002452a85a)no-repeat;
+	background-size: cover;
+	height: 100%;
+	width: 750rpx;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.bindBox input{
+padding-left: 20rpx;
+box-sizing:border-box;
+background: #FFFFFF;
+}
+.bindBox input,.bindBox .sureBtn{
+	height: 100rpx;
+border-radius: 6px;
+	line-height: 100rpx;
+	width: 100%;
+	font-family: PingFangSC-Regular;
+font-size: 28rpx;
+}
+.bindBox .sureBtn{
+	color: #fff;
+	margin-top: 50rpx;
+	background: #C0C0C0;
+  border:none;
+}
+.bindBox .sureBtn::after{
+  border:none;  
+}
+.bindBox .activeBtn{
+  opacity: .7;
+}
+.bindBox .bottomTip{
+font-size: 28rpx;
+color: #FFFFFF;
+margin-top: 80rpx;
+}
+.bindWrap{
+	margin:555rpx 40rpx 30rpx 40rpx;
+}
+.sureBtn[disabled]{
+	color:#fff!important;
+background:#afb1b2!important;
+
+}

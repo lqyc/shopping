@@ -1,0 +1,320 @@
+<!--pages/user/myOrder/myOrder.wxml-->
+<wxs src='../../../filter.wxs' module='Filter'></wxs>
+<view class='myOrder'>
+    <radio-group class="selectBox border-top bgColor" bindchange="selectState">
+        <label class="selectBoxItem {{selectState=='0'?'selected':''}}">
+            <radio value="0" />全部</label>
+        <label class="selectBoxItem {{selectState=='1'?'selected':''}}">
+            <radio value="1" />待付款</label>
+        <label class="selectBoxItem {{selectState=='2'?'selected':''}}">
+            <radio value="2" />待发货</label>
+        <label class="selectBoxItem {{selectState=='3'?'selected':''}}">
+            <radio value="3" />待收货</label>
+        <label class="selectBoxItem {{selectState=='4'?'selected':''}}">
+            <radio value="4" />完成</label>
+    </radio-group>
+    <view class='myOrderContent'>
+        <view hidden="{{selectState=='0'? false : true }}" class="selectBoxItemContentBox">
+            <view class='myOrderItems bgColor' wx:for="{{orderList}}" wx:key='{{index}}'>
+                <view class='myOrderItem'>
+                    <text class="myColor9B9191">收货人：</text>
+                    <text class="myColor444">{{item.consignee}}</text>
+                </view>
+                <view class='myOrderItem bwt'>
+                    <view>
+                        <text class="myColor9B9191">订单编号：</text>
+                        <text class="myColor444">{{item.orderNum}}</text>
+                    </view>
+                    <text class="{{item.tip=='已完成'?'colorGray':'colorRed'}}">{{item.tip}}</text>
+                </view>
+                <view class='myOrderItem border-bottom myOrderItemContent' catchtap="gotoDetail">
+                    <image src="{{item.img}}" />
+                    <view>
+                        <view class='myOrderItem '>
+                            <text>{{item.name}}</text>
+                        </view>
+                        <view class='myOrderItem textRight'>
+                            <text>¥{{Filter.Float2(item.price)}}</text>
+                        </view>
+                        <view class='myOrderItem bwt'>
+                            <text class="myColor9B9191">{{item.weigth}}, {{item.special}}</text>
+                            <view class="displayflex">
+                                <text class="rotate45">+</text>{{item.volume}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class='myOrderItem flexEnd'>
+                    <text class='flexEndStyle'>合计:  </text>
+                        <text class="colorRed">¥</text>
+                    <span class="priceStyle colorRed">{{Filter.Float2(item.total)}}</span>
+                </view>
+                <view class='myOrderItem  flexEnd myOrderItemBtnBox' wx:if="{{item.tip=='待付款'}}">
+                    <text wx:if='{{true}}' class="myOrderItemBtnBoxColor9b9" data-nums='订单号' bindtap='delProduction'>取消</text>
+                    <text wx:else class="myOrderItemBtnBoxColorf45">查询物流</text>
+                    <text class='bgColorRed'>付款</text>
+                </view>
+                  <view class='myOrderItem  flexEnd myOrderItemBtnBox' wx:elif="{{item.tip=='待发货'}}">
+                    <text wx:if='{{false}}' class="myOrderItemBtnBoxColor9b9" data-nums='订单号' bindtap='delProduction'>取消</text>
+                    <text wx:else class="myOrderItemBtnBoxColorf45" data-num='订单号' bindtap='remind'>提醒发货</text>
+                    <text class='bgColorRed'>确认收货</text>
+                </view>
+                <view class='myOrderItem  flexEnd myOrderItemBtnBox' wx:elif="{{item.tip=='待收货'}}">
+                    <text wx:if='{{false}}' class="myOrderItemBtnBoxColor9b9" data-nums='订单号' bindtap='delProduction'>取消</text>
+                    <text wx:else class="myOrderItemBtnBoxColorf45" data-num='订单号' bindtap='skipLogistics'>查询物流</text>
+                    <text class='bgColorRed'>确认收货</text>
+                </view>
+                <view class='myOrderItem  flexEnd myOrderItemBtnBox' wx:elif="{{item.tip=='退款中'}}">
+                    <text wx:if='{{false}}' class="myOrderItemBtnBoxColor9b9" data-nums='订单号' bindtap='delProduction'>取消</text>
+                    <text wx:else class="myOrderItemBtnBoxColorf45" data-num='订单号' bindtap='refundDetail'>退款详情</text>
+                    <text class='bgColorRed' bindtap='skipIptNum'>填写单号</text>
+                </view>
+                  <view class='myOrderItem  flexEnd myOrderItemBtnBox' wx:elif="{{item.tip=='退款'}}">
+                    <text wx:if='{{false}}' class="myOrderItemBtnBoxColor9b9" data-nums='订单号' bindtap='delProduction'>取消</text>
+                    <text wx:else class="myOrderItemBtnBoxColorf45" data-num='订单号'>退款详情</text>
+                </view>
+                <view class='myOrderItem  flexEnd myOrderItemBtnBox'wx:elif="{{item.tip=='已完成'}}">
+                    <text wx:if='{{false}}' class="myOrderItemBtnBoxColor9b9" data-nums='订单号' bindtap='delProduction'>取消</text>
+                    <text wx:else class="myOrderItemBtnBoxColorf45 delivedGray" data-num='订单号' bindtap='skipLogistics'>查询物流</text>
+                </view>
+            </view>
+
+          <!--   <view class='myOrderItems bgColor'>
+                <view class='myOrderItem'>
+                    <text class="myColor9B9191">收货人：</text>
+                    <text class="myColor444">{{'栗子妈妈'}}</text>
+                </view>
+                <view class='myOrderItem bwt'>
+                    <view>
+                        <text class="myColor9B9191">订单编号：</text>
+                        <text class="myColor444">{{'12312342356742342'}}</text>
+                    </view>
+                    <text class="colorRed">{{'待付款'}}</text>
+                </view>
+                <view class='myOrderItem border-bottom myOrderItemContent' catchtap="gotoDetail">
+                    <image src='https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1bd25cc8e6430033fbb6fd' />
+                    <view>
+                        <view class='myOrderItem '>
+                            <text>{{'有机食物大礼包'}}</text>
+                        </view>
+                        <view class='myOrderItem textRight'>
+                            <text>¥{{Filter.Float2(233)}}</text>
+                        </view>
+                        <view class='myOrderItem bwt'>
+                            <text class="myColor9B9191">{{'500g, 春节大礼包'}}</text>
+                            <view class="displayflex">
+                                <text class="rotate45">+</text>{{'1'}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class='myOrderItem flexEnd'>
+                    <text class='flexEndStyle'>合计：
+                        <text class="colorRed">¥</text>
+                    </text>
+                    <span class="priceStyle colorRed">{{Filter.Float2(233)}}</span>
+                </view>
+                <view class='myOrderItem  flexEnd myOrderItemBtnBox'>
+                    <text wx:if='{{true}}' class="myOrderItemBtnBoxColor9b9" data-nums='订单号' bindtap='delProduction'>取消</text>
+                    <text wx:else class="myOrderItemBtnBoxColorf45">查询物流</text>
+                    <text class='bgColorRed'>付款</text>
+                </view>
+            </view>
+            <view class='myOrderItems bgColor'>
+                <view class='myOrderItem'>
+                    <text class="myColor9B9191">收货人：</text>
+                    <text class="myColor444">{{'栗子妈妈'}}</text>
+                </view>
+                <view class='myOrderItem bwt'>
+                    <view>
+                        <text class="myColor9B9191">订单编号：</text>
+                        <text class="myColor444">{{'12312342356742342'}}</text>
+                    </view>
+                    <text class="colorRed">{{'待发货'}}</text>
+                </view>
+                <view class='myOrderItem border-bottom myOrderItemContent' catchtap="gotoDetail">
+                    <image src='https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1bd25cc8e6430033fbb6fd' />
+                    <view>
+                        <view class='myOrderItem '>
+                            <text>{{'有机食物大礼包'}}</text>
+                        </view>
+                        <view class='myOrderItem textRight'>
+                            <text>¥{{Filter.Float2(233)}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class='myOrderItem flexEnd'>
+                    <text class='flexEndStyle'>合计：
+                        <text class="colorRed">¥</text>
+                    </text>
+                    <span class="priceStyle colorRed">{{Filter.Float2(233)}}</span>
+                </view>
+                <view class='myOrderItem  flexEnd myOrderItemBtnBox'>
+                    <text wx:if='{{false}}' class="myOrderItemBtnBoxColor9b9" data-nums='订单号' bindtap='delProduction'>取消</text>
+                    <text wx:else class="myOrderItemBtnBoxColorf45" data-num='订单号' bindtap='remind'>提醒发货</text>
+                    <text class='bgColorRed'>确认收货</text>
+                </view>
+            </view>
+            <view class='myOrderItems bgColor'>
+                <view class='myOrderItem'>
+                    <text class="myColor9B9191">收货人：</text>
+                    <text class="myColor444">{{'栗子妈妈'}}</text>
+                </view>
+                <view class='myOrderItem bwt'>
+                    <view>
+                        <text class="myColor9B9191">订单编号：</text>
+                        <text class="myColor444">{{'12312342356742342'}}</text>
+                    </view>
+                    <text class="colorRed">{{'待收货'}}</text>
+                </view>
+                <view class='myOrderItem border-bottom myOrderItemContent' catchtap="gotoDetail">
+                    <image src='https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1bd25cc8e6430033fbb6fd' />
+                    <view>
+                        <view class='myOrderItem '>
+                            <text>{{'有机食物大礼包'}}</text>
+                        </view>
+                        <view class='myOrderItem textRight'>
+                            <text>¥{{Filter.Float2(233)}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class='myOrderItem flexEnd'>
+                    <text class='flexEndStyle'>合计：
+                        <text class="colorRed">¥</text>
+                    </text>
+                    <span class="priceStyle colorRed">{{Filter.Float2(233)}}</span>
+                </view>
+                <view class='myOrderItem  flexEnd myOrderItemBtnBox'>
+                    <text wx:if='{{false}}' class="myOrderItemBtnBoxColor9b9" data-nums='订单号' bindtap='delProduction'>取消</text>
+                    <text wx:else class="myOrderItemBtnBoxColorf45" data-num='订单号' bindtap='skipLogistics'>查询物流</text>
+                    <text class='bgColorRed'>确认收货</text>
+                </view>
+            </view>
+            <view class='myOrderItems bgColor'>
+                <view class='myOrderItem'>
+                    <text class="myColor9B9191">收货人：</text>
+                    <text class="myColor444">{{'栗子妈妈'}}</text>
+                </view>
+                <view class='myOrderItem bwt'>
+                    <view>
+                        <text class="myColor9B9191">订单编号：</text>
+                        <text class="myColor444">{{'12312342356742342'}}</text>
+                    </view>
+                    <text class="colorGray">{{'退款中'}}</text>
+                </view>
+                <view class='myOrderItem border-bottom myOrderItemContent' catchtap="gotoDetail">
+                    <image src='https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1bd25cc8e6430033fbb6fd' />
+                    <view>
+                        <view class='myOrderItem '>
+                            <text>{{'有机食物大礼包'}}</text>
+                        </view>
+                        <view class='myOrderItem textRight'>
+                            <text>¥{{Filter.Float2(233)}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class='myOrderItem flexEnd'>
+                    <text class='flexEndStyle'>合计：
+                        <text class="colorRed">¥</text>
+                    </text>
+                    <span class="priceStyle colorRed">{{Filter.Float2(233)}}</span>
+                </view>
+                <view class='myOrderItem  flexEnd myOrderItemBtnBox'>
+                    <text wx:if='{{false}}' class="myOrderItemBtnBoxColor9b9" data-nums='订单号' bindtap='delProduction'>取消</text>
+                    <text wx:else class="myOrderItemBtnBoxColorf45" data-num='订单号' bindtap='refundDetail'>退款详情</text>
+                    <text class='bgColorRed' bindtap='skipIptNum'>填写单号</text>
+                </view>
+            </view>
+            <view class='myOrderItems bgColor'>
+                <view class='myOrderItem'>
+                    <text class="myColor9B9191">收货人：</text>
+                    <text class="myColor444">{{'栗子妈妈'}}</text>
+                </view>
+                <view class='myOrderItem bwt'>
+                    <view>
+                        <text class="myColor9B9191">订单编号：</text>
+                        <text class="myColor444">{{'12312342356742342'}}</text>
+                    </view>
+                    <text class="colorGray">{{'退款'}}</text>
+                </view>
+                <view class='myOrderItem border-bottom myOrderItemContent' catchtap="gotoDetail">
+                    <image src='https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1bd25cc8e6430033fbb6fd' />
+                    <view>
+                        <view class='myOrderItem '>
+                            <text>{{'有机食物大礼包'}}</text>
+                        </view>
+                        <view class='myOrderItem textRight'>
+                            <text>¥{{Filter.Float2(233)}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class='myOrderItem flexEnd'>
+                    <text class='flexEndStyle'>合计：
+                        <text class="colorRed">¥</text>
+                    </text>
+                    <span class="priceStyle colorRed">{{Filter.Float2(233)}}</span>
+                </view>
+                <view class='myOrderItem  flexEnd myOrderItemBtnBox'>
+                    <text wx:if='{{false}}' class="myOrderItemBtnBoxColor9b9" data-nums='订单号' bindtap='delProduction'>取消</text>
+                    <text wx:else class="myOrderItemBtnBoxColorf45" data-num='订单号'>退款详情</text>
+                </view>
+            </view>
+            <view class='myOrderItems bgColor'>
+                <view class='myOrderItem'>
+                    <text class="myColor9B9191">收货人：</text>
+                    <text class="myColor444">{{'栗子妈妈'}}</text>
+                </view>
+                <view class='myOrderItem bwt'>
+                    <view>
+                        <text class="myColor9B9191">订单编号：</text>
+                        <text class="myColor444">{{'12312342356742342'}}</text>
+                    </view>
+                    <text class="colorGray">{{'已完成'}}</text>
+                </view>
+                <view class='myOrderItem border-bottom myOrderItemContent' catchtap="gotoDetail">
+                    <image src='https://cloud.gemii.cc/lizcloud/fs/noauth/media/5a1bd25cc8e6430033fbb6fd' />
+                    <view>
+                        <view class='myOrderItem '>
+                            <text>{{'SAXTON 水果啤酒 苹果 梨 桃子客户端'}}</text>
+                        </view>
+                        <view class='myOrderItem textRight'>
+                            <text>¥{{Filter.Float2(233)}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class='myOrderItem flexEnd'>
+                    <text class='flexEndStyle'>合计：
+                        <text class="colorRed">¥</text>
+                    </text>
+                    <span class="priceStyle colorRed">{{Filter.Float2(233)}}</span>
+                </view>
+                <view class='myOrderItem  flexEnd myOrderItemBtnBox'>
+                    <text wx:if='{{false}}' class="myOrderItemBtnBoxColor9b9" data-nums='订单号' bindtap='delProduction'>取消</text>
+                    <text wx:else class="myOrderItemBtnBoxColorf45 delivedGray" data-num='订单号' bindtap='skipLogistics'>查询物流</text>
+                </view>
+            </view> -->
+        </view>
+        <view hidden="{{selectState=='1'? false : true }}" class="mianBox selectBoxItemContentBox">
+            <view class="bgColor noCodeBox">
+                <span class="iconBackground noCode"></span>
+                <text class="noCodeText">还没有相关的订单呢</text>
+            </view>
+        </view>
+        <view hidden="{{selectState=='2'? false : true }}" class="selectBoxItemContentBox">
+            <view class="bgColor noCodeBox">
+                <span class="iconBackground noCode"></span>
+                <text class="noCodeText">还没有相关的订单呢</text>
+            </view>
+        </view>
+        <view hidden="{{selectState=='3'? false : true }}" class="selectBoxItemContentBox">
+            <view class="bgColor noCodeBox">
+                <span class="iconBackground noCode"></span>
+                <text class="noCodeText">还没有相关的订单呢</text>
+            </view>
+        </view>
+        <view hidden="{{selectState=='4'? false : true }}" class="selectBoxItemContentBox">
+            <view class="bgColor noCodeBox">
+                <span class="iconBackground noCode"></span>
+                <text class="noCodeText">还没有相关的订单呢</text>
+            </view>
+        </view>
+    </view>
+</view>

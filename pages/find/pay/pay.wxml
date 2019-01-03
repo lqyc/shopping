@@ -1,0 +1,61 @@
+<!--pages/find/pay/pay.wxml-->
+<wxs src='../../../filter.wxs' module='Filter'></wxs>
+<view class='payBox marginBottom100'>
+    <view class='payaAdr bgColor border-top'>
+        <view class=' addAdr ' wx:if='{{adrStyle}}' bindtap="editAddress">
+            <span class='addAdrimg iconBackground'></span>
+            <text class='addAdrtext'>添加收货地址</text>
+            <span class=' iconBackground rightArrow'></span>
+        </view>
+        <view class='selectAdr ' wx:else bindtap="editAddress">
+            <span class='addAdrimg iconBackground'></span>
+            <view class='addAdrtext'>
+                <view class="marginBottom20">
+                    <text>收货人：{{userName}}</text>
+                    <text>{{telNumber}}</text>
+                </view>
+                <text>收货人地址：{{provinceName}} {{cityName}} {{countyName}}{{detailInfo}}</text>
+            </view>
+            <span class=' iconBackground rightArrow'></span>
+            <!-- <image class='addAdrimg' src='/icons/right.png' /> -->
+        </view>
+        <image class="payaAdrimg" src='/icons/line.png ' />
+    </view>
+
+    <view class='goodsMessage bgColor  border-bottom '>
+        <!-- <view class='shopMessage border-bottom '>店铺？预留信息</view> -->
+        <view wx:for="{{goodsItem}}" wx:key="unique" class="paddingTop30">
+            <view class='goodsMessageBox border-bottom'>
+                <image src='{{item.img}} ' />
+                <view class='goodsMessageContent '>
+                    <view>
+                        <text>{{item.name}}</text>
+                    </view>
+                    <view>
+                        <text class="colorB5ADAD">{{item.valueSku}}</text>
+                        <view class="displayflex"><text class="rotate45">+</text>{{item.num}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class='shipping border-bottom '>
+                <text>配送方式：</text>
+                <view>
+                    <text>免运费：免运费</text>
+                    <!-- <text>快递发货</text> -->
+                </view>
+            </view>
+            <view class='sumMoney border-bottom'>
+                <text>小计</text>
+                <text class="payFooternum">¥<text class="fontSize40">{{Filter.Float2(item.price*item.num)}}</text></text>
+            </view>
+        </view>
+    </view>
+    <view class='payFooterBtn bgColor border-top '>
+        <view>
+            <text>合计：</text>
+            <text wx:if="{{onlyGoods}}" class="payFooternum colorRed">¥<text class="fontSize40 colorRed">{{Filter.Float2(goodsItem[0].price*goodsItem[0].num)}}</text></text>
+            <text class="payFooternum colorRed" wx:else>¥<text class="fontSize40 colorRed">{{Filter.Float2(sumMoney)}}</text></text>
+        </view>
+        <view bindtap='paySubmitBox' class="payFooterEnter bgColorRed">微信支付</view>
+    </view>
+</view>
